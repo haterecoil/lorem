@@ -1,0 +1,62 @@
+
+html, body{ height: 100%; font-size: 24px; font-family: 'Roboto Slab', serif; font-weight: 100; color:#2D2005; overflow: hidden;}
+body{min-height: 100%; width: 100%;}
+h1{font-size :3em; line-height: 2em;font-weight: 400;}
+
+
+div#myself, div#projects{width: 50%; height: 100%; display: inline-block; float: left;}
+
+div#my-card{width: 60%;height: 30%;top: 30%;background-color: #fff;position: relative;margin: auto;text-align: center;}
+div#my-card p, li.card p, li.card ul{line-height: 1.5em; color: #666;}
+
+ul.social{display:block; position: absolute; bottom: 3%; left: 20%;}
+ul.social li{ display:inline;}
+ul.social li a {color: #777; text-decoration: underline; font-size: 0.8em;}
+
+ul#cards{list-style: none; height: 100%; overflow: scroll; margin: 8%; }
+
+li.card{float: left;width: 42%; height: 60%; max-height : 60%;background-color: #fff; display: inline-block; margin: 3%; border-radius: 2% 2% 2% 2%; text-align: center;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=10);
+    -webkit-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -ms-transition: all 0.75s ease;
+    -kthtml-transition: all 0.75s ease;
+    transition: all 0.75s ease;
+}
+li.card:hover {
+	-moz-box-shadow: 0px 0px 13px 0px #656565;
+	-webkit-box-shadow: 0px 0px 13px 0px #656565;
+	-o-box-shadow: 0px 0px 13px 0px #656565;
+	box-shadow: 0px 0px 13px 0px #656565;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=15);
+}
+a.card-link {margin: 0px; display: block; width: 100%; height: 100%; text-decoration: none; color: black;}
+
+
+
+
+div.card-title{width: 100%;height: 36%;}
+div.card-content{width: 100%;height: 64%;}
+
+div.card-content ul{width: 80%; list-style:initial; list-style-type:circle; list-style-position: inside;text-align: left; padding-left: 10%;}
+div.card-content p{height: 30%;}
+div.card-content ul{height: 70%;}
+
+div#projects ul li a{color: #000; text-decoration: none;}
+
+
+@media screen and (max-width: 1024px){
+	body{overflow:scroll;}
+	div#myself, div#projects{width: 100%; display: block; float: left;}
+	div#myself{height: 60%;}
+	div#projects{height: 100%;}
+
+	ul#cards{overflow : visible;}
+}
+
+@media screen and (max-width: 695px){
+	ul.social{width: 60%;}
+	li.card{display: block; margin-left: 27%}
+	ul.social{left: 3%;}
+}
