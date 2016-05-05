@@ -78,7 +78,7 @@ $selection[] = $withlove;
 $selection[] = $xoa;
 $selection[] = $suggies;
 
-
+// LE RESTE
 
 $whatelse = [];
 
@@ -140,6 +140,58 @@ $whatelse[] = $leftovers;
 $whatelse[] = $webaudiosurf;
 $whatelse[] = $sinj;
 
+// PROJETS EN COURS
+
+$notyet = [];
+
+$zerowing = new Project;
+$zerowing->title = "Zerowing";
+$zerowing->url = "http://github.com/haterecoil/zerowing";
+$zerowing->description = <<<EOT
+<p>A Symfony2 pentesting API. Tries basic SQL injection, URL fuzzing, bruteforce of common default paswords, and spots XSS vulnerabilities.</p>
+<p>On this project I am both lead developper and teacher, as I took three code beginners in my team. They seemed motivated enough so we gave it a shot and scored the best grade together!</p>
+<p>This is my first Symfony2 project, a nice framework but it was a not-so-easy task.</p>
+EOT;
+$zerowing->tags = [
+          'Symfony2',
+          'PHP',
+          'Pentesting',
+          'School project'
+          ];
+
+
+$wintegreat = new Project;
+$wintegreat->title = "Wintegreat";
+$wintegreat->url = "#";
+$wintegreat->description = <<<EOT
+<p><a href="https://www.facebook.com/wintegreat/" target="_blank">Wintegreat</a> is an association helping refugees in France. I work with them on a webapp.</p>
+<p>This webapp connects ex-student refugees to fitting formations in France.</p>
+<p>As lead developper I chosed to discover a new framework and a new language : Ruby on Rails. Sorry but the repo is not public yet!</p>
+EOT;
+$wintegreat->tags = [
+          'Rails',
+          'Ruby',
+          'Volunteering'
+          ];
+
+
+$yhanbl = new Project;
+$yhanbl->title = "YHANBL";
+$yhanbl->url = "#";
+$yhanbl->description = <<<EOT
+<p>You Have A New Beautiful Letter ! lets you exchange letters with strangers. First through an app, then with real mails.</p>
+<p>I am backend developper there. The application is not really complex but we try to write it well.</p>
+EOT;
+$yhanbl->tags = [
+          'Angular',
+          'Ionic',
+          'Rails',
+          'School project'
+          ];
+
+$notyet[] = $zerowing;
+$notyet[] = $wintegreat;
+$notyet[] = $yhanbl;
 
 ?>
 
@@ -225,56 +277,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <br><br><br>
 
       <?php foreach ($selection as $project): ?>
-      <li class="card shadow">
-        <div class="card__title">
-          <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
-          <div class="card__tags-container">
-            <ul class="card__tags">
-              <?php foreach($project->tags as $tag): ?>
-                <li><?= $tag ?></li>
-              <?php endforeach ?>
-            </ul>
+        <li class="card shadow">
+          <div class="card__title">
+            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <div class="card__tags-container">
+              <ul class="card__tags">
+                <?php foreach($project->tags as $tag): ?>
+                  <li><?= $tag ?></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="card__content">
-          <?= $project->description ?>
-        </div>
-      </li>
-    <?php endforeach ?>
+          <div class="card__content">
+            <?= $project->description ?>
+          </div>
+        </li>
+      <?php endforeach ?>
+
+      <h3 class="separator">Le travail en cours</h3>
+      <br><br><br>
+
+      <?php foreach ($notyet as $project): ?>
+        <li class="card shadow">
+          <div class="card__title">
+            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <div class="card__tags-container">
+              <ul class="card__tags">
+                <?php foreach($project->tags as $tag): ?>
+                  <li><?= $tag ?></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+          </div>
+          <div class="card__content">
+            <?= $project->description ?>
+          </div>
+        </li>
+      <?php endforeach ?>
 
 
       <h3 class="separator">Le reste</h3>
       <br><br><br>
 
-      <li class="card shadow">
-        <div class="card__title"><a class="overlay">Offline</a></div>
-
-        <div class="card__content">
-          <p>Quelques projets sont trop récents et ne sont pas encore en ligne ! Au menu :
-          <br/> - Une API de Pentesting en Symfony2 (failles sql de base, xss, bruteforce) ( <a  target="_blank" href="https://github.com/haterecoil/zerowing"> ici </a> )
-          <br/> - Une appli pour traiter les problèmes d'addiction avec l'Hôpital Sainte Anne et l'association <a  target="_blank" href="http://newhealth.fr">New Health </a>.
-          <br/> - Un service pour que des réfugiés puissent trouver des formatiosn de msie à niveau qui leur correspondent avec <a  target="_blank" href="https://www.facebook.com/wintegreat/" >Wintegreat</a>.
-          </p>
-        </div>
-      </li>
-
       <?php foreach ($whatelse as $project): ?>
-      <li class="card shadow">
-        <div class="card__title">
-          <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
-          <div class="card__tags-container">
-            <ul class="card__tags">
-              <?php foreach($project->tags as $tag): ?>
-                <li><?= $tag ?></li>
-              <?php endforeach ?>
-            </ul>
+        <li class="card shadow">
+          <div class="card__title">
+            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <div class="card__tags-container">
+              <ul class="card__tags">
+                <?php foreach($project->tags as $tag): ?>
+                  <li><?= $tag ?></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="card__content">
-          <?= $project->description ?>
-        </div>
-      </li>
-    <?php endforeach ?>
+          <div class="card__content">
+            <?= $project->description ?>
+          </div>
+        </li>
+      <?php endforeach ?>
 
     </ul>
 

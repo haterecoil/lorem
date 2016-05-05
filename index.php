@@ -137,6 +137,58 @@ $whatelse[] = $leftovers;
 $whatelse[] = $webaudiosurf;
 $whatelse[] = $sinj;
 
+// PROJETS EN COURS
+
+$notyet = [];
+
+$zerowing = new Project;
+$zerowing->title = "Zerowing";
+$zerowing->url = "http://github.com/haterecoil/zerowing";
+$zerowing->description = <<<EOT
+
+<p>Une API de pentesting en Symfony2 pour tester son site contre différentes vunérabilités. Teste de l'injection SQL basique, de l'URL fuzzing, du bruteforce de mots de passe par défaut et cherche les failles XSS.</p>
+<p>Sur ce projet je suis à la fois lead developer et professeur car j'ai pris trois débutants dans mon équipe. Ils semblaient motiés et l'ont prouvé : nous avons eu la meilleure note sur ce devoir.</p>
+<p>C'est mon premier projet Symfony2, un superbe framework mais un projet un peu 'coton' !</p>
+EOT;
+$zerowing->tags = [
+          'Symfony2',
+          'PHP',
+          'Pentesting',
+          'School project'
+          ];
+
+
+$wintegreat = new Project;
+$wintegreat->title = "Wintegreat";
+$wintegreat->url = false;
+$wintegreat->description = <<<EOT
+<p><a href="https://www.facebook.com/wintegreat/" target="_blank">Wintegreat</a> est une association qui aide les réfugiés en France. Leur application servira à connecter des anciens étudiants réfugiés avec des formations qui leur sont detinées en France.</p>
+<p>Comme lead developer j'ai choisi de partir sur un langage et une techno que je ne connaissais pas : Ruby on Rails. Le 'convention over configuration' c'est une courbe d'apprentissage un peu ardue mais qui se termine très vite... et le ruby, c'est joli !</p>
+EOT;
+$wintegreat->tags = [
+          'Rails',
+          'Ruby',
+          'Volunteering'
+          ];
+
+
+$yhanbl = new Project;
+$yhanbl->title = "YHANBL";
+$yhanbl->url = false;
+$yhanbl->description = <<<EOT
+<p>You Have A New Beautiful Letter ! vous laisse échanger des lettres avec des inconnus. D'abord par messagerie puis avec de vraies lettres !.</p>
+<p>Backend developer, je construis une REST API pour faciliter la création d'applications mobile. Je m'occupe auss ide la strcture Ionic (peut-petre React finalement).</p>
+EOT;
+$yhanbl->tags = [
+          'Angular',
+          'Ionic',
+          'Rails',
+          'School project'
+          ];
+
+$notyet[] = $zerowing;
+$notyet[] = $wintegreat;
+$notyet[] = $yhanbl;
 
 ?>
 
@@ -222,56 +274,69 @@ mordu de musique mais aussi de développement . Et ils sont super !
       <br><br><br>
 
       <?php foreach ($selection as $project): ?>
-      <li class="card shadow">
-        <div class="card__title">
-          <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
-          <div class="card__tags-container">
-            <ul class="card__tags">
-              <?php foreach($project->tags as $tag): ?>
-                <li><?= $tag ?></li>
-              <?php endforeach ?>
-            </ul>
+        <li class="card shadow">
+          <div class="card__title">
+            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <div class="card__tags-container">
+              <ul class="card__tags">
+                <?php foreach($project->tags as $tag): ?>
+                  <li><?= $tag ?></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="card__content">
-          <?= $project->description ?>
-        </div>
-      </li>
-    <?php endforeach ?>
+          <div class="card__content">
+            <?= $project->description ?>
+          </div>
+        </li>
+      <?php endforeach ?>
+
+      <h3 class="separator">Le travail en cours</h3>
+      <br><br><br>
+
+      <?php foreach ($notyet as $project): ?>
+        <li class="card shadow">
+          <div class="card__title">
+          <?php if (isset($project_url)): ?>
+            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+          <?php else: ?>
+            <span class="overlay"><?= $project->title ?></span>
+          <?php endif; ?>
+            <div class="card__tags-container">
+              <ul class="card__tags">
+                <?php foreach($project->tags as $tag): ?>
+                  <li><?= $tag ?></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+          </div>
+          <div class="card__content">
+            <?= $project->description ?>
+          </div>
+        </li>
+      <?php endforeach ?>
 
 
       <h3 class="separator">Le reste</h3>
       <br><br><br>
 
-      <li class="card shadow">
-        <div class="card__title"><a class="overlay">Offline</a></div>
-
-        <div class="card__content">
-          <p>Quelques projets sont trop récents et ne sont pas encore en ligne ! Au menu :
-          <br/> - Une API de Pentesting en Symfony2 (failles sql de base, xss, bruteforce) ( <a  target="_blank" href="https://github.com/haterecoil/zerowing"> ici </a> )
-          <br/> - Une appli pour traiter les problèmes d'addiction avec l'Hôpital Sainte Anne et l'association <a  target="_blank" href="http://newhealth.fr">New Health </a>.
-          <br/> - Un service pour que des réfugiés puissent trouver des formatiosn de msie à niveau qui leur correspondent avec <a  target="_blank" href="https://www.facebook.com/wintegreat/" >Wintegreat</a>.
-          </p>
-        </div>
-      </li>
-
       <?php foreach ($whatelse as $project): ?>
-      <li class="card shadow">
-        <div class="card__title">
-          <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
-          <div class="card__tags-container">
-            <ul class="card__tags">
-              <?php foreach($project->tags as $tag): ?>
-                <li><?= $tag ?></li>
-              <?php endforeach ?>
-            </ul>
+        <li class="card shadow">
+          <div class="card__title">
+            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <div class="card__tags-container">
+              <ul class="card__tags">
+                <?php foreach($project->tags as $tag): ?>
+                  <li><?= $tag ?></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="card__content">
-          <?= $project->description ?>
-        </div>
-      </li>
-    <?php endforeach ?>
+          <div class="card__content">
+            <?= $project->description ?>
+          </div>
+        </li>
+      <?php endforeach ?>
 
     </ul>
 
