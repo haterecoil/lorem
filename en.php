@@ -300,7 +300,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <?php foreach ($notyet as $project): ?>
         <li class="card shadow">
           <div class="card__title">
-            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <?php if (isset($project_url)): ?>
+              <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <?php else: ?>
+              <span class="overlay"><?= $project->title ?></span>
+            <?php endif; ?>
             <div class="card__tags-container">
               <ul class="card__tags">
                 <?php foreach($project->tags as $tag): ?>
