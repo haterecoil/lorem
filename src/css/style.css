@@ -4,24 +4,20 @@ body{min-height: 100%; width: 100%;}
 
 h1 { font-size :3em; line-height: 2em;font-weight: 400;}
 
-a[href] { color: initial; }
-
 header { text-align: center; height: 80vh; padding-top: 20vh; min-height: 400px;}
 section { margin-top: -3em;  }
-div.sidecut{ width: 50%; height: 100%; display: inline-block; position: relative;}
-div.sidecut.right{ overflow-y: scroll;}
 
-div.about-me{ width: 60%; background-color: #fff; position: relative; margin: auto; text-align: center; }
+a {color: #777;}
 
-div.about-me p, li.card p, li.card ul{line-height: 1.5em; color: #666;}
+.about-me{ width: 60%; background-color: #fff; position: relative; margin: auto; text-align: center; }
+.about-me p, .card p, .card ul{line-height: 1.5em; color: #666;}
 
-ul.social{display:block; }
-ul.social li{ display:inline;}
-ul.social li a {color: #777; text-decoration: underline; font-size: 0.8em;}
-
-ul.cards{list-style: none; margin-left: 20%; width: 60%;}
-
-li.card{
+.cards{
+  list-style: none;
+  margin-left: 20%;
+  width: 60%;
+}
+.card{
   display: block;
   background-color: #fff;
   border-radius: 2% 2% 2% 2%;
@@ -37,63 +33,66 @@ li.card{
     transition: all 0.75s ease;
 }
 
-.card:hover .card__title a {color : #666;}
-.card__title a:hover { border-color: #666; }
-
-a.card__link {margin: 0px; display: block; width: 100%; height: 100%; text-decoration: none; color: black;}
 
 
 .card__title {
   font-size: 2em;
-    font-weight: bold;
-    opacity: 1;
-    width: 90%;
-    text-align: left;
-    padding-bottom: 10px;
-    -webkit-transition: color 0.2s ease;
-    -o-transition: color 0.2s ease;
-    transition: color 0.2s ease;
+  font-weight: bold;
+  color: #bbb;
+  opacity: 1;
+  width: 90%;
+  text-align: left;
+  padding-bottom: 10px;
+  -webkit-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-flow: row wrap;
 }
-.card__title a {
-  text-decoration: none; border-bottom: 4px solid transparent;
+
+.card:hover .card__name {
+  color : #666;
+}
+
+.card__links, .card__name, .card__link {
+  text-decoration: none; border-bottom: 1px solid transparent;
   -webkit-transition: border 0.2s ease,  color 0.2s ease;
-    -o-transition: border 0.2s ease,  color 0.2s ease;
-    transition: border 0.2s ease,  color 0.2s ease;
+  -o-transition: border 0.2s ease,  color 0.2s ease;
+  transition: border 0.2s ease,  color 0.2s ease;
   color: #bbb;
 }
+.card__links { font-size: 0.8rem; order: 3; width: 100%;}
+.card__links li { display: inline-block; font-weight: 100; font-size: 0.7rem; }
+.card__link:hover { border-color: #666; }
+.card__link { color: #bbb; }
 
 .card__content { width: 60%; display: inline-block; vertical-align: top;}
 .card__content p { text-indent: 1em; font-size: 16px; line-height: 1.5; margin-bottom: 5px; font-family: sans-serif;  }
 
-.card__tags {  display: inline-block; width: 40%; min-width: 90px; max-width:240px; }
-.card__tags li { font-size: 12px; padding: 0 10px; line-height: 1.5em; font-family: sans-serif;}
 
-.overlayy { width: 100%; height: 100%; position: absolute; }
-
-
-div.card__title { display: -webkit-flex;
-display: -moz-flex;
-display: -ms-flex;
-display: -o-flex;
-display: flex;  }
-
-div.card__tags-container {
-      height: 1em;
-    flex-grow: 1;
+.card__tags-container {
+  height: 1em;
+  flex: 1;
 }
-
-ul.card__tags {
-      display: inline-block;
-    width: 100%;
-    min-width: initial;
-    max-width: initial;
-    font-weight: 100;
-    height: 100%;
-    color: #111;
-    padding-top: 11px;
+.card__tags {
+  display: inline-block;
+  font-weight: 100;
+  height: 100%;
+  color: #111;
+  padding-top: 11px;
+  width: 100%;
 }
-
-.card__tags li { float: right;  }
+.card__tags li {
+  font-size: 0.7rem;
+  padding: 0 10px;
+  line-height: 1.5em;
+  font-family: sans-serif;
+  float: right;
+}
 
 .separator { margin-left: -30px;  }
 
@@ -105,12 +104,9 @@ ul.card__tags {
   .card__content { width: 100%;  }
 }
 
-
 @media screen and (max-width: 800px){
   body{overflow:scroll; font-size: 22px; }
-  div.sidecut{width: 100%; display: block; float: left;}
-  div.sidecut.left{height: auto; min-height: 50%;}
-  div.sidecut.right{height: 100%; overflow-y:initial;}
+
   div.about-me{height: auto;}
 
   ul.cards{overflow : visible;
@@ -119,7 +115,6 @@ ul.card__tags {
 }
 
 @media screen and (max-width: 695px){
-  ul.social{width: 60%; margin: auto;}
   div.card__title { flex-direction: column;  }
   div.card__tags-container {
     height: auto;

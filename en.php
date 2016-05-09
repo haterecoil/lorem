@@ -4,15 +4,43 @@
 class Project {
    var $title;
    var $url;
+   var $links;
    var $description;
    var $tags;
 }
+
+$intro = new Project;
+$intro->title = "Bonjour !";
+$intro->url = "http://serein.lorem.ovh";
+$intro->links = [
+  "github" => "https://github.com/haterecoil",
+  "twitter" => "https://twitter.com/morgancron",
+  "linkedIn" => "https://fr.linkedin.com/in/morgan-caron-12b558100",
+  "mail" => "mailto:morgan.caron@hetic.net",
+];
+$intro->description = <<<EOT
+        <p>Thanks for visiting me! This page indexes different projects I worked on since 2013 and my arrival at Hetic.</p>
+        <p>I re-discovered internet's world as a creator of content after a dozen years of content consumption. This has brought a lot of changes to my life.</p>
+        <p>My goal is to combine this passion to my first field of study: urban planning.</p>
+        <br/>
+        <p>Oh! I would like to tell you about two friends of mine : Ronan and Axel. <a target="_blank" href="http://ronanpolin.com">Ronan Polin</a> is a movie-addict (from silent japanese movies to documentaries), and a fine UX designer. <a target="_blank" href="http://axelchalon.fr">Axel Chalon</a> is a germanophile, music-addict and loves development (both personal and web). They are awesome!</p>
+
+EOT;
+$intro->tags = [
+  "Communication",
+  "Development",
+  "Curious",
+  "Polyvalent"
+];
 
 $selection = [];
 
 $serein = new Project;
 $serein->title = "Serein";
 $serein->url = "http://serein.lorem.ovh";
+$serein->links = [
+  "site" => "http://serein.lorem.ovh"
+];
 $serein->description = <<<EOT
           <p>Serein localizes syringes exchangers in France. Through a website and an SMS service.</p>
           <p>The SMS service is built with Cordova and transforms a common phone in a SMS server. If a phone running the app receieves an SMS containing "serein {some address}" it asks Serein's API for an exchanger address and finally answers the SMS.</p>
@@ -31,6 +59,9 @@ $serein->tags = [
 $withlove = new Project;
 $withlove->title = "Withlove";
 $withlove->url = "http://withlove.lorem.ovh";
+$withlove->links = [
+  "site" => "http://withlove.lorem.ovh"
+];
 $withlove->description = <<<EOT
           <p> WithLove is a stopped project I developped with Ronan Polin.</p>
           <p>We had a really fun idea! Send postal cards, from Paris, to anywhere! The package is comosed of a well hand written letter, a custom picture and a small item. But we let time go by... with our motivation.</p>
@@ -45,6 +76,9 @@ $withlove->tags = [
 $xoa = new Project;
 $xoa->title = "XOA";
 $xoa->url = "http://xoa.ovh";
+$xoa->links = [
+  "site" => "http://xoa.ovh"
+];
 $xoa->description = <<<EOT
           <p>XOA is a real-time collaboration tool. Axel Chalon and I lead this project.</p>
           <p>During our freshmen year at Hetic, we happened to share lots of text : code snippets, bits of course notes,... Classic chat applications appeared quite slow and painful to use considering the type of text we used to share and the frequency we needed it. So we gave it a shot.</p>
@@ -61,6 +95,9 @@ $xoa->tags = [
 $suggies = new Project;
 $suggies->title = "Suggies";
 $suggies->url = "http://suggies.lorem.ovh";
+$suggies->links = [
+  "site" => "http://suggies.lorem.ovh"
+];
 $suggies->description = <<<EOT
 <p>Suggies is a TV Show counceilor done in 3 days with 5 people.</p>
 EOT;
@@ -86,6 +123,9 @@ $whatelse = [];
 $fma = new Project;
 $fma->title = "Groupe FMA";
 $fma->url = "http://groupefma.fr";
+$fma->links = [
+  "site" => "http://groupefma.fr"
+];
 $fma->description = <<<EOT
 <p>A corporate website for an architectural firm.</p>
 EOT;
@@ -98,6 +138,9 @@ $fma->tags = [
 $leftovers = new Project;
 $leftovers->title = "Leftovers";
 $leftovers->url = "http://leftovers.lorem.ovh";
+$leftovers->links = [
+  "site" => "http://leftovers.lorem.ovh"
+];
 $leftovers->description = <<<EOT
 <p> Recipes for your leftovers! (my first WP site)</p>
 EOT;
@@ -111,6 +154,9 @@ $leftovers->tags = [
 $webaudiosurf = new Project;
 $webaudiosurf->title = "WebAudioSurf";
 $webaudiosurf->url = "http://projets.lorem.ovh/surf/";
+$webaudiosurf->links = [
+  "site" => "http://projets.lorem.ovh/surf/"
+];
 $webaudiosurf->description = <<<EOT
 <p>An HTML5/Canvas video game based on AudioSurf : each game depends of the music you throw in! Advanced sound analysis are implemented. More information in the source.</p>
 <p> Too bad, Soundcloud changed its API so it doesnt really functions.</p>
@@ -125,6 +171,9 @@ $webaudiosurf->tags = [
 $sinj = new Project;
 $sinj->title = "3/4 de Singe";
 $sinj->url = "http://sinj.lorem.ovh/";
+$sinj->links = [
+  "site" => "http://sinj.lorem.ovh"
+];
 $sinj->description = <<<EOT
 <p>A real-time vocabulary game.</p>
 EOT;
@@ -147,6 +196,9 @@ $notyet = [];
 $zerowing = new Project;
 $zerowing->title = "Zerowing";
 $zerowing->url = "http://github.com/haterecoil/zerowing";
+$zerowing->links = [
+  "github" => "http://github.com/haterecoil/zerowing"
+];
 $zerowing->description = <<<EOT
 <p>A Symfony2 pentesting API. Tries basic SQL injection, URL fuzzing, bruteforce of common default paswords, and spots XSS vulnerabilities.</p>
 <p>On this project I am both lead developper and teacher, as I took three code beginners in my team. They seemed motivated enough so we gave it a shot and scored the best grade together!</p>
@@ -163,6 +215,8 @@ $zerowing->tags = [
 $wintegreat = new Project;
 $wintegreat->title = "Wintegreat";
 $wintegreat->url = "#";
+$wintegreat->links = [
+];
 $wintegreat->description = <<<EOT
 <p><a href="https://www.facebook.com/wintegreat/" target="_blank">Wintegreat</a> is an association helping refugees in France. I work with them on a webapp.</p>
 <p>This webapp connects ex-student refugees to fitting formations in France.</p>
@@ -178,6 +232,8 @@ $wintegreat->tags = [
 $yhanbl = new Project;
 $yhanbl->title = "YHANBL";
 $yhanbl->url = "#";
+$yhanbl->links = [
+];
 $yhanbl->description = <<<EOT
 <p>You Have A New Beautiful Letter ! lets you exchange letters with strangers. First through an app, then with real mails.</p>
 <p>I am backend developper there. The application is not really complex but we try to write it well.</p>
@@ -234,42 +290,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h1>>morgan</h1>
     <p>student @<a href="http://hetic.net">HETIC</a></p>
     <p>welcome to my lab</p>
-    <ul class="social">
-      <li><a target="_blank" href="https://github.com/haterecoil">Git</a><span> |</span></li>
-      <li><a target="_blank" href="https://twitter.com/morgancron">Twit</a><span> |</span></li>
-      <li><a target="_blank" href="https://www.linkedin.com/in/morgan-caron-12b558100?locale=en_US">LkIn</a><span> |</span></li>
-      <li><a target="_blank" href="mailto:morgan.caron@hetic.net">Mail</a></li>
-    </ul>
   </header>
   <section>
   <ul class="cards">
-  <h3 class="separator">Le quotidien</h3>
+ <h3 class="separator">Le quotidien</h3>
   <br><br><br>
-
-    <li class="card shadow">
-        <div class="card__title"><span>Bonjour =) </span>
-        <div class="card__tags-container">
-          <ul class="card__tags">
-            <li>Communication</li>
-            <li>Development</li>
-            <li>Curious</li>
-            <li>Polyvalent</li>
-          </ul>
-        </div>
-        </div>
-
-        <div class="card__content">
-
-        <p>Thanks for visiting me! This page indexes different projects I worked on since 2013 and my arrival at Hetic.</p>
-        <p>I re-discovered internet's world as a creator of content after a dozen years of content consumption. This has brought a lot of changes to my life.</p>
-        <p>My goal is to combine this passion to my first field of study: urban planning.</p>
-        <br/>
-        <p>Oh! I would like to tell you about two friends of mine : Ronan and Axel. <a target="_blank" href="http://ronanpolin.com">Ronan Polin</a> is a movie-addict (from silent japanese movies to documentaries), and a fine UX designer. <a target="_blank" href="http://axelchalon.fr">Axel Chalon</a> is a germanophile, music-addict and loves development (both personal and web). They are awesome!</p>
-
-
-        </div>
-
-      </li>
+      <li class="card shadow">
+          <div class="card__title">
+            <span class="card__name"><?= $intro->title ?></span>
+            <ul class="card__links">
+              <?php if (count($intro->links) > 0):?>
+              <li>Links :</li>
+            <?php endif ?>
+              <?php foreach ($intro->links as $name => $link): ?>
+                <li><a class="card__link" target="_blank" href="<?= $link ?>"> <?= $name ?> </a></li>
+              <?php endforeach ?>
+            </ul>
+            <div class="card__tags-container">
+              <ul class="card__tags">
+                <?php foreach($intro->tags as $tag): ?>
+                  <li><?= $tag ?></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+          </div>
+          <div class="card__content">
+            <?= $intro->description ?>
+          </div>
+        </li>
 
   </ul>
     <ul class="cards">
@@ -279,7 +327,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <?php foreach ($selection as $project): ?>
         <li class="card shadow">
           <div class="card__title">
-            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <span class="card__name"><?= $project->title ?></span>
+            <ul class="card__links">
+              <?php if (count($project->links) > 0):?>
+              <li>Links :</li>
+            <?php endif ?>
+              <?php foreach ($project->links as $name => $link): ?>
+                <li><a class="card__link" target="_blank" href="<?= $link ?>"> <?= $name ?> </a></li>
+              <?php endforeach ?>
+            </ul>
             <div class="card__tags-container">
               <ul class="card__tags">
                 <?php foreach($project->tags as $tag): ?>
@@ -300,11 +356,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <?php foreach ($notyet as $project): ?>
         <li class="card shadow">
           <div class="card__title">
-            <?php if (isset($project_url)): ?>
-              <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
-            <?php else: ?>
-              <span class="overlay"><?= $project->title ?></span>
-            <?php endif; ?>
+            <span class="card__name"><?= $project->title ?></span>
+            <ul class="card__links">
+              <?php if (count($project->links) > 0):?>
+              <li>Links :</li>
+            <?php endif ?>
+              <?php foreach ($project->links as $name => $link): ?>
+                <li><a class="card__link" target="_blank" href="<?= $link ?>"> <?= $name ?> </a></li>
+              <?php endforeach ?>
+            </ul>
             <div class="card__tags-container">
               <ul class="card__tags">
                 <?php foreach($project->tags as $tag): ?>
@@ -326,7 +386,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <?php foreach ($whatelse as $project): ?>
         <li class="card shadow">
           <div class="card__title">
-            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <span class="card__name"><?= $project->title ?></span>
+            <ul class="card__links">
+              <?php if (count($project->links) > 0):?>
+              <li>Links :</li>
+            <?php endif ?>
+              <?php foreach ($project->links as $name => $link): ?>
+                <li><a class="card__link" target="_blank" href="<?= $link ?>"> <?= $name ?> </a></li>
+              <?php endforeach ?>
+            </ul>
             <div class="card__tags-container">
               <ul class="card__tags">
                 <?php foreach($project->tags as $tag): ?>
@@ -342,6 +410,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <?php endforeach ?>
 
     </ul>
+
 
   </section>
 

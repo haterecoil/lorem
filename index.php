@@ -4,15 +4,44 @@
 class Project {
    var $title;
    var $url;
+   var $links;
    var $description;
    var $tags;
 }
 
 $selection = [];
 
+$intro = new Project;
+$intro->title = "Bonjour !";
+$intro->url = "http://serein.lorem.ovh";
+$intro->links = [
+  "github" => "https://github.com/haterecoil",
+  "twitter" => "https://twitter.com/morgancron",
+  "linkedIn" => "https://fr.linkedin.com/in/morgan-caron-12b558100",
+  "mail" => "mailto:morgan.caron@hetic.net",
+];
+$intro->description = <<<EOT
+          <p>Merci de votre visite ! Cette page montre les différents projets auquels j'ai participé depuis 2013 et donc mon entrée à Hétic. </p>
+          <p>Re-découvrir le monde des internets par la porte de <em>ceux qui créent</em> après avoir été <em>celui qui consomme</em> fut une révélation. </p>
+          <p>Dorénavant je souhaite conjuguer cette passion à mon premier parcours scolaire : l'aménagement urbain.</p>
+          <br/>
+          <p> Ah et je voulais vous parler de deux potes à moi !  <a target="_blank" href="http://ronanpolin.com">Ronan Polin</a> est un
+mordu de cinéma, mais aussi ergonome et professionel de la critique constructive. <a target="_blank" href="http://axelchalon.fr">Axel Chalon</a> pour sa part est un germanophile
+mordu de musique mais aussi de développement . Et ils sont super !</p>
+EOT;
+$intro->tags = [
+  "Communication",
+  "Développement",
+  "Curiosité",
+  "Polyvalence"
+];
+
 $serein = new Project;
 $serein->title = "Serein";
 $serein->url = "http://serein.lorem.ovh";
+$serein->links = [
+  "site" => "http://serein.lorem.ovh"
+];
 $serein->description = <<<EOT
           <p>Serein permet de localiser les échangeurs/distributeurs de seringues en France. Via un site web, mais aussi par SMS.</p>
           <p>Le service par SMS est rendu possible grâce à une application Cordova qui transforme un téléphone lamba en "centrale SMS". Si ce téléphone reçoit "serein {une adresse}", il transmet l'adresse à l'API Serein et répond celle du distributeur le plus proche.</p>
@@ -31,6 +60,9 @@ $serein->tags = [
 $withlove = new Project;
 $withlove->title = "Withlove";
 $withlove->url = "http://withlove.lorem.ovh";
+$withlove->links = [
+  "site" => "http://withlove.lorem.ovh"
+];
 $withlove->description = <<<EOT
 <p>WithLove est un projet, aujourd'hui au point mort, réalisé avec Ronan Polin.</p>
           <p>Nous avions une idée vraiment fun ! Envoyer des cartes postales, depuis Paris, vers le monde entier !</p>
@@ -45,6 +77,9 @@ $withlove->tags = [
 $xoa = new Project;
 $xoa->title = "XOA";
 $xoa->url = "http://xoa.ovh";
+$xoa->links = [
+  "site" => "http://xoa.ovh"
+];
 $xoa->description = <<<EOT
 <p>XOA est un outil de collaboration en temps réel. Un projet mené avec <a hrf="http://axelchalon.fr" target="_blank" title="portfolio d'Axel Chalon">Axel Chalon</a>.</p>
           <p>Au cours de notre première année, nous avons souvent eu à nous échanger des petits bouts de texte ou de code. Les applications de messagerie traditionelle étant peu adaptées à ces formats, nous nous sommes dits que ce serait un bon entrainement de créer notre propre solution.</p>
@@ -60,16 +95,19 @@ $xoa->tags = [
 $suggies = new Project;
 $suggies->title = "Suggies";
 $suggies->url = "http://suggies.lorem.ovh";
+$suggies->links = [
+  "site" => "http://suggies.lorem.ovh"
+];
 $suggies->description = <<<EOT
 <p>Suggies est un site de conseil de séries réalisé durant une semaine intensive (c'est à dire en 3 jours et demi).</p>
 EOT;
 $suggies->tags = [
           'PHP',
-          'Cache "fait maison"',
-          'API TheMovieDB',
-          'APC pour limiter les requêtes à l\'API',
+          'Cache',
+          'API',
+          'APC',
           'Algorithmes de suggestion',
-          'Semaine intensive'
+          '4 days'
           ];
 
 $selection[] = $serein;
@@ -85,6 +123,9 @@ $whatelse = [];
 $fma = new Project;
 $fma->title = "Groupe FMA";
 $fma->url = "http://groupefma.fr";
+$fma->links = [
+  "site" => "http://groupefma.fr"
+];
 $fma->description = <<<EOT
 <p>Un site corporate pour un cabinet d'architecture.</p>
 EOT;
@@ -97,6 +138,9 @@ $fma->tags = [
 $leftovers = new Project;
 $leftovers->title = "Leftovers";
 $leftovers->url = "http://leftovers.lorem.ovh";
+$leftovers->links = [
+  "site" => "http://leftovers.lorem.ovh"
+];
 $leftovers->description = <<<EOT
 <p>Enfin des recettes pour vos restes ! Mon premier site wordpress</p>
 EOT;
@@ -109,6 +153,9 @@ $leftovers->tags = [
 $webaudiosurf = new Project;
 $webaudiosurf->title = "WebAudioSurf";
 $webaudiosurf->url = "http://projets.lorem.ovh/surf/";
+$webaudiosurf->links = [
+  "site" => "http://projets.lorem.ovh/surf/"
+];
 $webaudiosurf->description = <<<EOT
 <p>Un jeu vidéo basé sur AudioSurf : le jeu est dynamique et unique pour chaque morceau de musique ! Des algorithmes avancés de traitement audio sont implémentés.</p>
 EOT;
@@ -122,6 +169,9 @@ $webaudiosurf->tags = [
 $sinj = new Project;
 $sinj->title = "3/4 de Singe";
 $sinj->url = "http://sinj.lorem.ovh/";
+$sinj->links = [
+  "site" => "http://sinj.lorem.ovh"
+];
 $sinj->description = <<<EOT
 <p>Lien à venir. Un jeu vidéo basé sur le quart de singe : qui possède le meilleur vocabulaire ?</p>
 EOT;
@@ -144,6 +194,9 @@ $notyet = [];
 $zerowing = new Project;
 $zerowing->title = "Zerowing";
 $zerowing->url = "http://github.com/haterecoil/zerowing";
+$zerowing->links = [
+  "github" => "http://github.com/haterecoil/zerowing"
+];
 $zerowing->description = <<<EOT
 
 <p>Une API de pentesting en Symfony2 pour tester son site contre différentes vunérabilités. Teste de l'injection SQL basique, de l'URL fuzzing, du bruteforce de mots de passe par défaut et cherche les failles XSS.</p>
@@ -161,6 +214,8 @@ $zerowing->tags = [
 $wintegreat = new Project;
 $wintegreat->title = "Wintegreat";
 $wintegreat->url = false;
+$wintegreat->links = [
+];
 $wintegreat->description = <<<EOT
 <p><a href="https://www.facebook.com/wintegreat/" target="_blank">Wintegreat</a> est une association qui aide les réfugiés en France. Leur application servira à connecter des anciens étudiants réfugiés avec des formations qui leur sont detinées en France.</p>
 <p>Comme lead developer j'ai choisi de partir sur un langage et une techno que je ne connaissais pas : Ruby on Rails. Le 'convention over configuration' c'est une courbe d'apprentissage un peu ardue mais qui se termine très vite... et le ruby, c'est joli !</p>
@@ -175,6 +230,8 @@ $wintegreat->tags = [
 $yhanbl = new Project;
 $yhanbl->title = "YHANBL";
 $yhanbl->url = false;
+$yhanbl->links = [
+];
 $yhanbl->description = <<<EOT
 <p>You Have A New Beautiful Letter ! vous laisse échanger des lettres avec des inconnus. D'abord par messagerie puis avec de vraies lettres !.</p>
 <p>Backend developer, je construis une REST API pour faciliter la création d'applications mobile. Je m'occupe auss ide la strcture Ionic (peut-petre React finalement).</p>
@@ -231,42 +288,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h1>>morgan</h1>
     <p>étudiant @<a href="http://hetic.net">HETIC</a></p>
     <p>bienvenue dans mon laboratoire</p>
-    <ul class="social">
-      <li><a target="_blank" href="https://github.com/haterecoil">Git</a><span> |</span></li>
-      <li><a target="_blank" href="https://twitter.com/morgancron">Twit</a><span> |</span></li>
-      <li><a target="_blank" href="https://fr.linkedin.com/in/morgan-caron-12b558100">LkIn</a><span> |</span></li>
-      <li><a target="_blank" href="mailto:morgan.caron@hetic.net">Mail</a></li>
-    </ul>
   </header>
   <section>
   <ul class="cards">
   <h3 class="separator">Le quotidien</h3>
   <br><br><br>
-
-    <li class="card shadow">
-        <div class="card__title"><span>Bonjour =) </span>
-        <div class="card__tags-container">
-          <ul class="card__tags">
-            <li>Communication</li>
-            <li>Développement</li>
-            <li>Curiosité</li>
-            <li>Polyvalence</li>
-          </ul>
-        </div>
-        </div>
-
-        <div class="card__content">
-          <p>Merci de votre visite ! Cette page montre les différents projets auquels j'ai participé depuis 2013 et donc mon entrée à Hétic. </p>
-          <p>Re-découvrir le monde des internets par la porte de <em>ceux qui créent</em> après avoir été <em>celui qui consomme</em> fut une révélation. </p>
-          <p>Dorénavant je souhaite conjuguer cette passion à mon premier parcours scolaire : l'aménagement urbain.</p>
-          <br/>
-          <p> Ah et je voulais vous parler de deux potes à moi !  <a target="_blank" href="http://ronanpolin.com">Ronan Polin</a> est un
-mordu de cinéma, mais aussi ergonome et professionel de la critique constructive. <a target="_blank" href="http://axelchalon.fr">Axel Chalon</a> pour sa part est un germanophile
-mordu de musique mais aussi de développement . Et ils sont super !
-
-        </div>
-
-      </li>
+      <li class="card shadow">
+          <div class="card__title">
+            <span class="card__name"><?= $intro->title ?></span>
+            <ul class="card__links">
+              <?php if (count($intro->links) > 0):?>
+              <li>Liens :</li>
+            <?php endif ?>
+              <?php foreach ($intro->links as $name => $link): ?>
+                <li><a class="card__link" target="_blank" href="<?= $link ?>"> <?= $name ?> </a></li>
+              <?php endforeach ?>
+            </ul>
+            <div class="card__tags-container">
+              <ul class="card__tags">
+                <?php foreach($intro->tags as $tag): ?>
+                  <li><?= $tag ?></li>
+                <?php endforeach ?>
+              </ul>
+            </div>
+          </div>
+          <div class="card__content">
+            <?= $intro->description ?>
+          </div>
+        </li>
 
   </ul>
     <ul class="cards">
@@ -276,7 +325,15 @@ mordu de musique mais aussi de développement . Et ils sont super !
       <?php foreach ($selection as $project): ?>
         <li class="card shadow">
           <div class="card__title">
-            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <span class="card__name"><?= $project->title ?></span>
+            <ul class="card__links">
+              <?php if (count($project->links) > 0):?>
+              <li>Liens :</li>
+            <?php endif ?>
+              <?php foreach ($project->links as $name => $link): ?>
+                <li><a class="card__link" target="_blank" href="<?= $link ?>"> <?= $name ?> </a></li>
+              <?php endforeach ?>
+            </ul>
             <div class="card__tags-container">
               <ul class="card__tags">
                 <?php foreach($project->tags as $tag): ?>
@@ -297,11 +354,15 @@ mordu de musique mais aussi de développement . Et ils sont super !
       <?php foreach ($notyet as $project): ?>
         <li class="card shadow">
           <div class="card__title">
-          <?php if (isset($project_url)): ?>
-            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
-          <?php else: ?>
-            <span class="overlay"><?= $project->title ?></span>
-          <?php endif; ?>
+            <span class="card__name"><?= $project->title ?></span>
+            <ul class="card__links">
+              <?php if (count($project->links) > 0):?>
+              <li>Liens :</li>
+            <?php endif ?>
+              <?php foreach ($project->links as $name => $link): ?>
+                <li><a class="card__link" target="_blank" href="<?= $link ?>"> <?= $name ?> </a></li>
+              <?php endforeach ?>
+            </ul>
             <div class="card__tags-container">
               <ul class="card__tags">
                 <?php foreach($project->tags as $tag): ?>
@@ -323,7 +384,15 @@ mordu de musique mais aussi de développement . Et ils sont super !
       <?php foreach ($whatelse as $project): ?>
         <li class="card shadow">
           <div class="card__title">
-            <a href="<?= $project->url ?>" target="_blank" title="<?= $project->title ?>" class="overlay"><?= $project->title ?></a>
+            <span class="card__name"><?= $project->title ?></span>
+            <ul class="card__links">
+              <?php if (count($project->links) > 0):?>
+              <li>Liens :</li>
+            <?php endif ?>
+              <?php foreach ($project->links as $name => $link): ?>
+                <li><a class="card__link" target="_blank" href="<?= $link ?>"> <?= $name ?> </a></li>
+              <?php endforeach ?>
+            </ul>
             <div class="card__tags-container">
               <ul class="card__tags">
                 <?php foreach($project->tags as $tag): ?>
