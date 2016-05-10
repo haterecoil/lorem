@@ -96,6 +96,7 @@ $suggies = new Project;
 $suggies->title = "Suggies";
 $suggies->url = "http://suggies.lorem.ovh";
 $suggies->links = [
+  "github" => "https://github.com/Evan-Peuvergne/Suggies",
   "site" => "http://suggies.lorem.ovh"
 ];
 $suggies->description = <<<EOT
@@ -154,6 +155,7 @@ $webaudiosurf = new Project;
 $webaudiosurf->title = "WebAudioSurf";
 $webaudiosurf->url = "http://projets.lorem.ovh/surf/";
 $webaudiosurf->links = [
+  "github" => "https://github.com/haterecoil/WebAudioSurf",
   "site" => "http://projets.lorem.ovh/surf/"
 ];
 $webaudiosurf->description = <<<EOT
@@ -170,6 +172,7 @@ $sinj = new Project;
 $sinj->title = "3/4 de Singe";
 $sinj->url = "http://sinj.lorem.ovh/";
 $sinj->links = [
+  "github" => "https://github.com/haterecoil/sinj",
   "site" => "http://sinj.lorem.ovh"
 ];
 $sinj->description = <<<EOT
