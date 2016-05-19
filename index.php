@@ -21,7 +21,7 @@ $intro->links = [
   "mail" => "mailto:morgan.caron@hetic.net",
 ];
 $intro->description = <<<EOT
-          <p>Merci de votre visite ! Cette page montre les différents projets auquels j'ai participé depuis 2013 et donc mon entrée à Hétic. </p>
+          <p>Merci de votre visite ! Cette page montre les différents projets auxquels j'ai participé depuis 2013 et donc mon entrée à Hétic. </p>
           <p>Re-découvrir le monde des internets par la porte de <em>ceux qui créent</em> après avoir été <em>celui qui consomme</em> fut une révélation. </p>
           <p>Dorénavant je souhaite conjuguer cette passion à mon premier parcours scolaire : l'aménagement urbain.</p>
           <br/>
