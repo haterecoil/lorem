@@ -12,6 +12,15 @@ a {color: #777;}
 .about-me{ width: 60%; background-color: #fff; position: relative; margin: auto; text-align: center; }
 .about-me p, .card p, .card ul{line-height: 1.5em; color: #666;}
 
+.header__links {}
+.header__links__item {
+  margin: 0 3px;
+  display: inline-block;
+}
+.header__link {
+  font-size: 0.8em;
+}
+
 .cards{
   list-style: none;
   margin-left: 20%;

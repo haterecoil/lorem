@@ -293,6 +293,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h1>>morgan</h1>
     <p>student @<a href="http://hetic.net">HETIC</a></p>
     <p>welcome to my lab</p>
+    <ul class="header__links">
+      <li class="header__links__item"><a class="header__link" target="_blank"  href="https://github.com/haterecoil">github</a></li>
+      <li class="header__links__item"><a class="header__link" target="_blank"  href="https://fr.linkedin.com/in/morgan-caron-12b558100">linkedin</a></li>
+      <li class="header__links__item"><a class="header__link" target="_blank"  href="mailto:morgan.caron@hetic.net">mail </a></li>
+    </ul>
   </header>
   <section>
   <ul class="cards">
